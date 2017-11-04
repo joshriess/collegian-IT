@@ -11,17 +11,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/health', function(req, res, next) {
-  res.send(player.health);
+  res.send(player.health.toString());
 });
 
 router.get('/health/decrease', function(req, res, next) {
     player.health--;
-    res.send(player.health);
+    res.send(player.health.toString());
 });
 
 router.get('/health/increase', function(req, res, next) {
     player.health++;
-    res.send(player.health);
+    res.send(player.health.toString());
 });
 
 router.get('/room', function(req, res, next) {
