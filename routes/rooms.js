@@ -5,7 +5,7 @@ var rooms = {
   "start":{
     "description":"You wake up in a dark, empty room",
     "search":{
-      "text": "You search the room, but find nothing.",
+      "text": "It seems that people were here, but left in a hurry",
       "found":{
         has: false
       }
@@ -35,7 +35,7 @@ var rooms = {
   "startCorner":{
     "description":"You see a great hall ahead",
     "search":{
-      "text": "You see a coffee shop in the distance.",
+      "text": "You try the next door, and they all seem locked.",
       "found":{
        has: false
       }
@@ -48,9 +48,9 @@ var rooms = {
   },
 
   "atrium":{
-    "description":"You are in a great room with a coffeshop.",
+    "description":"You seem to be in a great room with a conference room and coffeshop.",
     "search":{
-      "text": "The coffe shop is closer.",
+      "text": "You find tables and chairs, nothing useful for the current situation",
       "found":{
         has: false
       }
@@ -67,8 +67,9 @@ var rooms = {
     "search":{
       "text": "You search the bar, and find a key!",
       "found":{
-        hs: "key"
-      }
+        has: "key"
+      },
+      "picture": "RFIDkey.jpg"
     },
     "back":"atrium",
     "left":"board",
@@ -78,12 +79,13 @@ var rooms = {
   },
 
   "board":{
-    "description":"You see a digital board",
+    "description":"You see a digital board.",
     "search":{
       "text": "You find a map on the board!",
       "found":{
-       hs: "map"
-      }
+       has: "map"
+      },
+      "picture": "board.jpg"
     },
     "back":"radinas",
     "left":false,
@@ -95,7 +97,7 @@ var rooms = {
   "durland":{
     "description":"You see a big auditorium and glass doors",
     "search":{
-      "text": "You don't find anything important",
+      "text": "You see a picture of a man that seems important.",
       "found":{
         has: false
       }
