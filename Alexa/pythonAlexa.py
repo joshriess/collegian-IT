@@ -8,7 +8,7 @@ http://amzn.to/1LGWsLG
 """
 
 from __future__ import print_function
-
+#import requests
 
 # --------------- Helpers that build all of the responses ----------------------
 
@@ -50,13 +50,16 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "Welcome to the Hack K-State Escape game. " \
-                    "Please open your browser, and navigate to " \
-                    "the game URL. When you are ready, say start game."
+    #speech_output = "Welcome to the Hack K-State Escape game. " \
+    #                "Please open your browser, and navigate to " \
+    #                "the game URL. When you are ready, say a command."
+    speech_output = "Welcome to the Escape Hack K-State game. " \
+                    "You wake up in a dark empty room, there's a door on the left and a door on the right. " \
+                    "You feel an eerie and uneasy feeling in your gut, where did everyone go?"
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = "When you are ready, please say " \
-                    "start game."
+                    "a command."
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
@@ -72,18 +75,69 @@ def handle_session_end_request():
         card_title, speech_output, None, should_end_session))
 
 
-def doIntent(intent, session):
-    """ Creates the request for the current option. """
+# def doIntent(intent, session):
+#     """ Creates the request for the current option. """
+#
+#     card_title = intent['name']
+#     session_attributes = {}
+#     should_end_session = False
+#
+#     #speech_output = card_title
+#     #speech_output = intent['slots']['LIST_OF_OPTIONS']['value']
+#     speech_output = intent['slots']['Options']['LIST_OF_OPTIONS']['value']
+#     #speech_output = "Here is the response for that action. What would you like to do next?"
+#     reprompt_text = "What would you like to do next?"
+#
+#     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
+
+def backIntent(intent, session):
     card_title = intent['name']
     session_attributes = {}
     should_end_session = False
-
-    speech_output = "Here is the response for that action. What would you like to do next?"
-    remprompt_text = "What would you like to do next?"
-
+    speech_output = card_title
+    reprompt_text = "What would you like to do?"
     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
+def forwardIntent(intent, session):
+    card_title = intent['name']
+    session_attributes = {}
+    should_end_session = False
+    speech_output = card_title
+    reprompt_text = "What would you like to do?"
+    return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
+
+def leftIntent(intent, session):
+    card_title = intent['name']
+    session_attributes = {}
+    should_end_session = False
+    speech_output = card_title
+    reprompt_text = "What would you like to do?"
+    return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
+
+def rightIntent(intent, session):
+    card_title = intent['name']
+    session_attributes = {}
+    should_end_session = False
+    speech_output = card_title
+    reprompt_text = "What would you like to do?"
+    return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
+
+def searchIntent(intent, session):
+    card_title = intent['name']
+    session_attributes = {}
+    should_end_session = False
+    speech_output = card_title
+    reprompt_text = "What would you like to do?"
+    return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
+
+def catchAll(intent, session):
+    card_title = 'did not recognize'
+    session_attributes = {}
+    should_end_session = False
+    speech_output = "I'm not quite sure what you said, please try again"
+    reprompt_text = "Please try again"
+    return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
 #
 # def create_favorite_color_attributes(favorite_color):
@@ -169,13 +223,22 @@ def on_intent(intent_request, session):
     intent_name = intent_request['intent']['name']
 
     # Dispatch to your skill's intent handlers
-    if intent_name == "MyOptions":
-        return doIntent(intent, session)
+    if intent_name == "backIntent":
+        return backIntent(intent, session)
+    elif intent_name == "forwardIntent":
+        return forwardIntent(intent, session)
+    elif intent_name == "leftIntent":
+        return leftIntent(intent, session)
+    elif intent_name == "rightIntent":
+        return rightIntent(intent, session)
+    elif intent_name == "searchIntent":
+        return searchIntent(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
     elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
         return handle_session_end_request()
     else:
+        #return catchAll(intent, session)
         raise ValueError("Invalid intent")
 
 
