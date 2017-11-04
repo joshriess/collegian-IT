@@ -3,7 +3,7 @@ var router = express.Router();
 
 var rooms = {
   "start":{
-    "picture":"start.jpg",
+    "description":"You wake up in a dark, empty room",
     "search":{
       "text": "You search the room, but find nothing.",
       "found":{
