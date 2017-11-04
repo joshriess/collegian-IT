@@ -9,9 +9,14 @@ router.get('/', function(req, res, next) {
 
   page += `<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script>
-    $.getJSON("/player/room", function(data) {
-        $("#currentRoom").attr("src","/images/" + data.room + ".jpg");
-    });
+    function loadThings() {
+        $.getJSON("/player/room", function(data) {
+            $("#currentRoom").attr("src","/images/" + data.room + ".jpg");
+        });
+        setTimeout(loadThings, 5000);
+    }
+    loadThings();
+
   </script>`;
 
   page += "</body></html>";
