@@ -17,7 +17,6 @@ var rooms = {
     "forward":false
   },
 
-
   "beocat":{
     "picture":"",
     "search":,{
@@ -32,7 +31,6 @@ var rooms = {
     "exit":false,
     "forward":false
   },
-
 
   "startCorner":{
     "picture":"",
@@ -49,7 +47,6 @@ var rooms = {
     "forward":"atruim"
   },
 
-
   "atrium":{
     "picture":"",
     "search":,{
@@ -61,23 +58,52 @@ var rooms = {
     "back":"startCorner",
     "left":false,//Change for late game
     "right":false,
-    "exit":true,
+    "exit":false,
     "forward":"radinas"
   },
 
-  
   "radinas":{
     "picture":"",
     "search":{
-      "text": "You search the room, but find nothing.",
+      "text": "You search the bar, and find a key!",
       "found":{
         "key"
       }
     },
-    "back":false,
-    "left":"startCorner",
-    "right":"beocat",
+    "back":"atrium",
+    "left":"board",
+    "right":false,
+    "exit":true,
+    "forward":false
+  },
+
+  "board":{
+    "picture":"",
+    "search":{
+      "text": "You find a board with a map on it!",
+      "found":{
+        "map"
+      }
+    },
+    "back":"radinas",
+    "left":false,
+    "right":false,
     "exit":false,
+    "forward":"durland"
+  },
+
+  "durland":{
+    "picture":"",
+    "search":{
+      "text": "You don't find anything important",
+      "found":{
+        false
+      }
+    },
+    "back":"board",
+    "left":false,//will change with updates
+    "right":false,
+    "exit":true,
     "forward":false
   },
 }
