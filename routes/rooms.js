@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 var key = false;
+var getkey:
+  if(key){
+    getkey = "loungeExit";
+  }
+  else{
+    getkey = false;
+  }
 var rooms = {
   "startRoom":{
     "description":"You wake up in a dark, empty room",
@@ -60,12 +67,7 @@ var rooms = {
     "left":false,
     "right":false,
     "exit":false,
-    if(key){
-      "forward":"loungeExit"
-    }
-    else{
-      "forward":false
-    }
+
   },
 
   "studentLounge":{
@@ -101,12 +103,7 @@ var rooms = {
   "loungeExit":{
     "description":"You see a staircase that leads to an exit",
     "search":{
-      if(key){
-        "text": "Congratulations, you WIN!"
-      }
-      else{
-        "text":"The door seems to need a key to open."
-      }
+      "text":getkey
     },
     "back":"loungeHall",
     "left":false,
