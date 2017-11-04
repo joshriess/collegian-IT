@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var player {
+var player = {
     "currentRoom": "first",
     "health": 4
 }
