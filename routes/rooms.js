@@ -11,7 +11,7 @@ else{
 }
 var rooms = {
   "startRoom":{
-    "niceName":"",
+    "niceName":"the hack k state college sleeping room.",
     "description":"You wake up in a dark, empty room",
     "search":{
       "text": "It seems that people were here, but left in a hurry",
@@ -25,6 +25,7 @@ var rooms = {
   },
 
   "beocat":{
+    "niceName":"the beocat hallway",
     "description":"You see a hallway full of doors.",
     "search":{
       "text": "You see a supercomputer",
