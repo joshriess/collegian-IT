@@ -230,10 +230,6 @@ var rooms = {
        "map": true,
        "picture": "map.jpg"
       },
-<<<<<<< HEAD
-=======
-      "picture": "map.jpg"
->>>>>>> 40c60fed9273f100c3686ffe6ebfd1b63ddb009d
     },
     "back":"radinas",
     "left":false,
