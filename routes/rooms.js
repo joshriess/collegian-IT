@@ -71,7 +71,7 @@ var rooms = {
   "studentLounge":{
     "description":"You see a room of tables, chairs, and a printer",
     "search":{
-      "text": "You smell the remains of sleepless nights and broken dreams.",
+      "text": "You hear the sound of typing from somewhere in the room.",
       "found":{
         has: false
       }
@@ -124,7 +124,7 @@ var rooms = {
       }
     },
     "back":"startRoom",
-    "left":false,
+    "left":"engineeringLab",
     "right":"beocat",
     "exit":false,
     "forward":"atrium"
@@ -144,20 +144,80 @@ var rooms = {
     "exit":true,
     "forward":false
   },
-  
+
   "atrium":{
     "description":"You seem to be in a great room with a conference room and coffeshop.",
     "search":{
-      "text": "You find tables and chairs, nothing useful for the current situation",
+      "text": "You find tables and chairs, nothing useful.",
       "found":{
         has: false
       }
     },
     "back":"computerScienceHallway",
-    "left":false,//Change for late game
+    "left":"staircase",//Change for late game
     "right":false,
     "exit":false,
     "forward":"radinas"
+  },
+
+  "staircase":{
+    "description":"You see a staircase that goes downstairs",
+    "search":{
+      "text": "I wonder what is downstairs",
+      "found":{
+        has: false
+      }
+    },
+    "back":"atrium",
+    "left":false,
+    "right":false,
+    "exit":true,
+    "forward":"library"
+  },
+
+  "library":{
+    "description":"You see a library that doesn't have any books.",
+    "search":{
+      "text": "You smell the remains of sleepless nights and broken dreams.",
+      "found":{
+        has: false
+      }
+    },
+    "back":"durlandAuditorium",
+    "left":"staircase",
+    "right":false,
+    "exit":true,
+    "forward":"libraryComputerLab"
+  },
+
+  "libraryComputerLab":{
+    "description":"You see a computer lab and a door at the end of the hall.",
+    "search":{
+      "text": "You see a door at the end of the hall",
+      "found":{
+        has: false
+      }
+    },
+    "back":"library",
+    "left":false,
+    "right":false,
+    "exit":true,
+    "forward":"libraryExit"
+  },
+
+  "libraryExit":{
+    "description":"You see a library that doesn't have any books.",
+    "search":{
+      "text": "Congratulations, you WIN!",
+      "found":{
+        has: false
+      }
+    },
+    "back":"libraryComputerLab",
+    "left":false,
+    "right":false,
+    "exit":true,
+    "forward":false
   },
 
   "radinas":{
