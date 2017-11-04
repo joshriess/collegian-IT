@@ -30,5 +30,13 @@ router.post('/map',function(req, res, next){
     items.map.has = req.body.has;
     res.send(items.map);
 });
+router.get('/key', function(req, res, next) {
+    res.send(items.map);
+});
+
+router.post('/key',function(req, res, next){
+    items.map.has = req.body.has;
+    res.send(items.map);
+});
 
 module.exports = router;
