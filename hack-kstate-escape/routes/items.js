@@ -31,12 +31,12 @@ router.post('/map',function(req, res, next){
     res.send(items.map);
 });
 router.get('/key', function(req, res, next) {
-    res.send(items.map);
+    res.send(items.key);
 });
 
 router.post('/key',function(req, res, next){
-    items.map.has = req.body.has;
-    res.send(items.map);
+    items.key.has = req.body.has;
+    res.send(items.key);
 });
 
 module.exports = router;
