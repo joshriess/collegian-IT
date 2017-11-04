@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var currentRoom = "first";
+var health = 4;
+
 /* GET player info. */
 router.get('/', function(req, res, next) {
 
