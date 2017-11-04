@@ -3,7 +3,7 @@ var router = express.Router();
 
 var rooms = {
   "start":{
-    "picture":"",
+    "picture":"start.jpg",
     "search":{
       "text": "You search the room, but find nothing.",
       "found":{
@@ -18,7 +18,7 @@ var rooms = {
   },
 
   "beocat":{
-    "picture":"",
+    "picture":"beocat.jpg",
     "search":{
       "text": "You try to open all the doors, but they are locked.",
       "found":{
@@ -33,7 +33,7 @@ var rooms = {
   },
 
   "startCorner":{
-    "picture":"",
+    "picture":"startCorner.jpg",
     "search":{
       "text": "You see a coffee shop ahead.",
       "found":{
@@ -48,7 +48,7 @@ var rooms = {
   },
 
   "atrium":{
-    "picture":"",
+    "picture":"atrium.jpg",
     "search":{
       "text": "The coffe shop is closer.",
       "found":{
@@ -63,7 +63,7 @@ var rooms = {
   },
 
   "radinas":{
-    "picture":"",
+    "picture":"radinas.jpeg",
     "search":{
       "text": "You search the bar, and find a key!",
       "found":{
@@ -78,7 +78,7 @@ var rooms = {
   },
 
   "board":{
-    "picture":"",
+    "picture":"board.jpg",
     "search":{
       "text": "You find a board with a map on it!",
       "found":{
@@ -93,7 +93,7 @@ var rooms = {
   },
 
   "durland":{
-    "picture":"",
+    "picture":"durland.jpg",
     "search":{
       "text": "You don't find anything important",
       "found":{
