@@ -113,4 +113,9 @@ router.get('/', function(req, res, next) {
   res.send(rooms);
 });
 
+router.get('/:roomName', function(req , res){
+    var roomName = req.params.roomName;
+    res.send(rooms[roomName]);
+});
+
 module.exports = router;
