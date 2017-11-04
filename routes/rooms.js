@@ -11,7 +11,7 @@ else{
 }
 var rooms = {
   "startRoom":{
-    "niceName":""
+    "niceName":"",
     "description":"You wake up in a dark, empty room",
     "search":{
       "text": "It seems that people were here, but left in a hurry",
