@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 var key = false;
-var getkey:
-  if(key){
+var getkey;
+if(key){
     getkey = "loungeExit";
-  }
-  else{
+}
+else{
     getkey = false;
-  }
+}
 var rooms = {
   "startRoom":{
     "description":"You wake up in a dark, empty room",
