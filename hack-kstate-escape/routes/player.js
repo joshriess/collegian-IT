@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+var currentRoom = "first";
 /* GET player info. */
 router.get('/', function(req, res, next) {
 
@@ -9,6 +10,15 @@ router.get('/', function(req, res, next) {
 
     // Send the results
   res.send('respond with a resource');
+});
+
+router.get('/room', function(req, res, next) {
+    res.send(currentRoom);
+});
+
+router.post('/map',function(req, res, next){
+    currentRoom = req.body;
+    res.send(currentRoom);
 });
 
 module.exports = router;
