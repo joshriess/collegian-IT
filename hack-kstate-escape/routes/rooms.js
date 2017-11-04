@@ -7,7 +7,7 @@ var rooms = {
     "search":{
       "text": "You search the room, but find nothing.",
       "found":{
-        false
+        has: false
       }
     },
     "back":false,
@@ -22,7 +22,7 @@ var rooms = {
     "search":{
       "text": "You try to open all the doors, but they are locked.",
       "found":{
-        false
+       has: false
       }
     },
     "back":"start",
@@ -37,7 +37,7 @@ var rooms = {
     "search":{
       "text": "You see a coffee shop ahead.",
       "found":{
-        false
+       has: false
       }
     },
     "back":"start",
@@ -52,7 +52,7 @@ var rooms = {
     "search":{
       "text": "The coffe shop is closer.",
       "found":{
-        false
+        has: false
       }
     },
     "back":"startCorner",
@@ -67,7 +67,7 @@ var rooms = {
     "search":{
       "text": "You search the bar, and find a key!",
       "found":{
-        "key"
+        hs: "key"
       }
     },
     "back":"atrium",
@@ -82,7 +82,7 @@ var rooms = {
     "search":{
       "text": "You find a board with a map on it!",
       "found":{
-        "map"
+       hs: "map"
       }
     },
     "back":"radinas",
@@ -97,7 +97,7 @@ var rooms = {
     "search":{
       "text": "You don't find anything important",
       "found":{
-        false
+        has: false
       }
     },
     "back":"board",
