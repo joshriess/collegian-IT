@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var player = {
-    "currentRoom": "first",
+    "currentRoom": "start",
     "health": 4
 }
 
@@ -25,7 +25,8 @@ router.get('/health/increase', function(req, res, next) {
 });
 
 router.get('/room', function(req, res, next) {
-    res.send(player.currentRoom);
+    var response = JSON.stringify(player.currentRoom);
+    res.send(response);
 });
 
 router.post('/room',function(req, res, next){
