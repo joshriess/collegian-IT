@@ -11,6 +11,7 @@ else{
 }
 var rooms = {
   "startRoom":{
+    "niceName":""
     "description":"You wake up in a dark, empty room",
     "search":{
       "text": "It seems that people were here, but left in a hurry",
@@ -245,7 +246,7 @@ var rooms = {
       "found": false
     },
     "back":"board",
-    "left":false,//will change with updates
+    "left":"library",//will change with updates
     "right":false,
     "exit":false,
     "forward":"durlandExit"
