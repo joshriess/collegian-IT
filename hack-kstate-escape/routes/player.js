@@ -16,7 +16,7 @@ router.get('/room', function(req, res, next) {
     res.send(currentRoom);
 });
 
-router.post('/map',function(req, res, next){
+router.post('/room',function(req, res, next){
     currentRoom = req.body;
     res.send(currentRoom);
 });
