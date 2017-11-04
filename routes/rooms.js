@@ -222,7 +222,7 @@ var rooms = {
     "search":{
       "text": "You search the bar, and find a key!",
       "found":{
-        key = true;
+        has:"key"
       },
       "picture": "RFIDkey.jpg"
     },
