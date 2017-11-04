@@ -108,7 +108,7 @@ var rooms = {
     "back":"loungeHall",
     "left":false,
     "right":false,
-    "exit":false,
+    "exit":true,
     "forward":false
   },
 
@@ -138,7 +138,7 @@ var rooms = {
     "back":"computerScienceHallway",
     "left":false,
     "right":false,
-    "exit":true,
+    "exit":false,
     "forward":false
   },
 
@@ -168,7 +168,7 @@ var rooms = {
     "back":"atrium",
     "left":false,
     "right":false,
-    "exit":true,
+    "exit":false,
     "forward":"library"
   },
 
@@ -183,7 +183,7 @@ var rooms = {
     "back":"durlandAuditorium",
     "left":"staircase",
     "right":false,
-    "exit":true,
+    "exit":false,
     "forward":"libraryComputerLab"
   },
 
@@ -198,7 +198,7 @@ var rooms = {
     "back":"library",
     "left":false,
     "right":false,
-    "exit":true,
+    "exit":false,
     "forward":"libraryExit"
   },
 
@@ -229,7 +229,7 @@ var rooms = {
     "back":"atrium",
     "left":"board",
     "right":false,
-    "exit":true,
+    "exit":false,
     "forward":false
   },
 
@@ -244,7 +244,7 @@ var rooms = {
     "back":"radinas",
     "left":false,
     "right":false,
-    "exit":true,
+    "exit":false,
     "forward":false
   },
 
@@ -255,7 +255,7 @@ var rooms = {
       "found":{
        has: "map"
       },
-      "picture": "board.jpg"
+      "picture": "map.jpg"
     },
     "back":"radinas",
     "left":false,
@@ -275,7 +275,7 @@ var rooms = {
     "back":"board",
     "left":false,//will change with updates
     "right":false,
-    "exit":true,
+    "exit":false,
     "forward":"durlandExit"
   },
 
@@ -293,12 +293,6 @@ var rooms = {
     "exit":false,
     "forward":false
   },
-
-
-
-
-
-
 }
 
 /* GET rooms listing. */
