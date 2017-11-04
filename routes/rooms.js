@@ -236,6 +236,21 @@ var rooms = {
     "forward":false
   },
 
+  "radinasExit":{
+    "description":"You see a locked exit",
+    "search":{
+      "text": "You find an exit that seems to be welded shut.",
+      "found":{
+        has: false
+      }
+    },
+    "back":"radinas",
+    "left":false,
+    "right":false,
+    "exit":true,
+    "forward":false
+  },
+
   "board":{
     "description":"You see a digital board.",
     "search":{
