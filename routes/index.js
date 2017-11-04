@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
         $.getJSON("/player/room", function(data) {
             $("#currentRoom").attr("src","/images/" + data.room + ".jpg");
         });
-        setTimeout(loadThings, 5000);
+        setTimeout(loadThings, 1000);
     }
     loadThings();
 
