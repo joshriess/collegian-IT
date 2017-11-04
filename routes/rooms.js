@@ -18,7 +18,7 @@ var rooms = {
   },
 
   "beocat":{
-    "picture":"beocat.jpg",
+    "description":"You see a hallway full of doors.",
     "search":{
       "text": "You try to open all the doors, but they are locked.",
       "found":{
@@ -33,9 +33,9 @@ var rooms = {
   },
 
   "startCorner":{
-    "picture":"startCorner.jpg",
+    "description":"You see a great hall ahead",
     "search":{
-      "text": "You see a coffee shop ahead.",
+      "text": "You see a coffee shop in the distance.",
       "found":{
        has: false
       }
@@ -48,7 +48,7 @@ var rooms = {
   },
 
   "atrium":{
-    "picture":"atrium.jpg",
+    "description":"You are in a great room with a coffeshop.",
     "search":{
       "text": "The coffe shop is closer.",
       "found":{
@@ -63,7 +63,7 @@ var rooms = {
   },
 
   "radinas":{
-    "picture":"radinas.jpeg",
+    "description":"The smell of the coffee is strong",
     "search":{
       "text": "You search the bar, and find a key!",
       "found":{
@@ -78,9 +78,9 @@ var rooms = {
   },
 
   "board":{
-    "picture":"board.jpg",
+    "description":"You see a digital board",
     "search":{
-      "text": "You find a board with a map on it!",
+      "text": "You find a map on the board!",
       "found":{
        hs: "map"
       }
@@ -93,7 +93,7 @@ var rooms = {
   },
 
   "durland":{
-    "picture":"durland.jpg",
+    "description":"You see a big auditorium and glass doors",
     "search":{
       "text": "You don't find anything important",
       "found":{
