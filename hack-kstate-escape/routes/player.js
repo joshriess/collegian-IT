@@ -30,7 +30,7 @@ router.get('/room', function(req, res, next) {
 });
 
 router.post('/room',function(req, res, next){
-    player.currentRoom = req.body;
+    player.currentRoom = req.body.room;
     res.send(player.currentRoom);
 });
 
