@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var rooms = require('./routes/rooms');
 var items = require('./routes/items');
 var player = require('./routes/player');
+var images = require('./routes/imageServer');
 
 var app = express();
 
@@ -24,10 +25,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', index);
 app.use('/rooms', rooms);
 app.use('/items', items);
 app.use('/player', player);
+app.use('/images', images);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
