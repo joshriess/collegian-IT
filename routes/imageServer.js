@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-express.static('images');
-router.use(express.static('images'));
-router.use('/images', express.static('images'));
+var dir = express.static('images');
+router.use(dir);
+
 
 module.exports = router;
