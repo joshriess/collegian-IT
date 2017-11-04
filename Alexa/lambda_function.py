@@ -8,7 +8,7 @@ http://amzn.to/1LGWsLG
 """
 
 from __future__ import print_function
-#import requests
+import requests, json
 
 # --------------- Helpers that build all of the responses ----------------------
 
@@ -48,16 +48,25 @@ def get_welcome_response():
     add those here
     """
 
+    r = requests.get('http://hack-kstate-escape.herokuapp.com/player/room')
+    data = json.loads(r.text)
+
+    currentRoom = data["room"];
+
     session_attributes = {}
     card_title = "Welcome"
-    #speech_output = "Welcome to the Hack K-State Escape game. " \
+    speech_output = "Welcome to the Hack K-State Escape game. " \
+                    "You are currently in the " + currentRoom + " room. "
     #                "Please open your browser, and navigate to " \
     #                "the game URL. When you are ready, say a command."
-    speech_output = "Welcome to the Escape Hack K-State game. " \
-                    "You wake up in a dark empty room, there's a door on the left and a door on the right. " \
-                    "You feel an eerie and uneasy feeling in your gut, where did everyone go?"
+    #speech_output = "Welcome to the Escape Hack K-State game. " \
+    #                "You wake up in a dark empty room, there's a door on the left and a door on the right. " \
+    #                "You feel an eerie and uneasy feeling in your gut, where did everyone go?"
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
+
+
+
     reprompt_text = "When you are ready, please say " \
                     "a command."
     should_end_session = False
