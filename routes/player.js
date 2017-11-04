@@ -25,7 +25,7 @@ router.get('/health/increase', function(req, res, next) {
 });
 
 router.get('/room', function(req, res, next) {
-    var response = JSON.stringify(player.currentRoom);
+    var response = {"room": player.currentRoom};
     res.send(response);
 });
 
