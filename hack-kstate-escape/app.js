@@ -31,7 +31,7 @@ app.use('/', index);
 app.use('/rooms', rooms);
 app.use('/items', items);
 app.use('/player', player);
-app.use('/images', images);
+app.use('/map', images);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
