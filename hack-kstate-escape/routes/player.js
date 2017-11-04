@@ -1,26 +1,36 @@
 var express = require('express');
 var router = express.Router();
 
-var currentRoom = "first";
-var health = 4;
+var player {
+    "currentRoom": "first",
+    "health": 4
+}
 
-/* GET player info. */
 router.get('/', function(req, res, next) {
+  res.send(player);
+});
 
-    // Define the player info here
+router.get('/health', function(req, res, next) {
+  res.send(player.health);
+});
 
+router.get('/health/decrease', function(req, res, next) {
+    player.health--;
+    res.send(player.health);
+});
 
-    // Send the results
-  res.send('respond with a resource');
+router.get('/health/increase', function(req, res, next) {
+    player.health++;
+    res.send(player.health);
 });
 
 router.get('/room', function(req, res, next) {
-    res.send(currentRoom);
+    res.send(player.currentRoom);
 });
 
 router.post('/room',function(req, res, next){
-    currentRoom = req.body;
-    res.send(currentRoom);
+    player.currentRoom = req.body;
+    res.send(player.currentRoom);
 });
 
 module.exports = router;
