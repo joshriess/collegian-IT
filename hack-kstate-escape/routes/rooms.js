@@ -4,7 +4,7 @@ var router = express.Router();
 var rooms = {
   "start":{
     "picture":"",
-    "search":,{
+    "search":{
       "text": "You search the room, but find nothing.",
       "found":{
         false
@@ -19,7 +19,7 @@ var rooms = {
 
   "beocat":{
     "picture":"",
-    "search":,{
+    "search":{
       "text": "You try to open all the doors, but they are locked.",
       "found":{
         false
@@ -34,7 +34,7 @@ var rooms = {
 
   "startCorner":{
     "picture":"",
-    "search":,{
+    "search":{
       "text": "You see a coffee shop ahead.",
       "found":{
         false
@@ -49,7 +49,7 @@ var rooms = {
 
   "atrium":{
     "picture":"",
-    "search":,{
+    "search":{
       "text": "The coffe shop is closer.",
       "found":{
         false
