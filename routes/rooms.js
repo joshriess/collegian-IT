@@ -44,7 +44,7 @@ var rooms = {
     "left":false,
     "right":"beocat",
     "exit":false,
-    "forward":"atruim"
+    "forward":"atrium"
   },
 
   "atrium":{
@@ -92,6 +92,21 @@ var rooms = {
     "right":false,
     "exit":false,
     "forward":"durland"
+  },
+
+  "durland":{
+    "description":"You see a big auditorium and glass doors",
+    "search":{
+      "text": "You see a picture of a man that seems important.",
+      "found":{
+        has: false
+      }
+    },
+    "back":"board",
+    "left":false,//will change with updates
+    "right":false,
+    "exit":true,
+    "forward":false
   },
 
   "durland":{
