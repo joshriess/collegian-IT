@@ -117,7 +117,6 @@ def getRoomInfo(theRoom):
 def backIntent(intent, session):
 
     currentRoom = getRoom()
-
     data = getRoomInfo(currentRoom)
 
     if (data["back"] != False):
@@ -133,10 +132,19 @@ def backIntent(intent, session):
     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
 def forwardIntent(intent, session):
+
+    currentRoom = getRoom()
+    data = getRoomInfo(currentRoom)
+
+    if (data["forward"] != False):
+        switchRoom(data["forward"])
+        speech_output = "You are currently in the " + data["forward"]  + " room. "
+    else:
+        speech_output = "You cannot go forward. Do something else."
+
     card_title = intent['name']
     session_attributes = {}
     should_end_session = False
-    speech_output = card_title
     reprompt_text = "What would you like to do?"
     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
