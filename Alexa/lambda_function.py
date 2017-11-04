@@ -109,12 +109,16 @@ def switchRoom(theRoom):
     r = requests.post('http://hack-kstate-escape.herokuapp.com/player/room',switchRoom)
 
 
+def getRoomInfo(theRoom):
+    r = requests.get("http://hack-kstate-escape.herokuapp.com/rooms/" + theRoom)
+    return json.loads(r.text)
+
+
 def backIntent(intent, session):
 
     currentRoom = getRoom()
 
-    r = requests.get("http://hack-kstate-escape.herokuapp.com/rooms/" + currentRoom)
-    data = json.loads(r.text)
+    data = getRoomInfo(currentRoom)
 
     if (data["back"] != False):
         switchRoom(data["back"])
