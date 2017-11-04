@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   page += `<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script>
     $.getJSON("/player/room", function(data) {
-        $("#currentRoom").attr("src","/Images/" + data + ".jpg");
+        $("#currentRoom").attr("src","/images/" + data + ".jpg");
     });
   </script>`;
 
