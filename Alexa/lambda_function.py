@@ -141,18 +141,36 @@ def forwardIntent(intent, session):
     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
 def leftIntent(intent, session):
+    currentRoom = getRoom()
+
+    data = getRoomInfo(currentRoom)
+
+    if (data["left"] != False):
+        switchRoom(data["left"])
+        speech_output = "You are currently in the " + data["left"]  + " room. "
+    else:
+        speech_output = "You are as far left as you can go. Do something else."
+
     card_title = intent['name']
     session_attributes = {}
     should_end_session = False
-    speech_output = card_title
     reprompt_text = "What would you like to do?"
     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
 def rightIntent(intent, session):
+    currentRoom = getRoom()
+
+    data = getRoomInfo(currentRoom)
+
+    if (data["right"] != False):
+        switchRoom(data["right"])
+        speech_output = "You are currently in the " + data["right"]  + " room. "
+    else:
+        speech_output = "You are as far right as you can go. Do something else."
+
     card_title = intent['name']
     session_attributes = {}
     should_end_session = False
-    speech_output = card_title
     reprompt_text = "What would you like to do?"
     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
