@@ -48,10 +48,7 @@ def get_welcome_response():
     add those here
     """
 
-    r = requests.get('http://hack-kstate-escape.herokuapp.com/player/room')
-    data = json.loads(r.text)
-
-    currentRoom = data["room"];
+    currentRoom = getRoom()
 
     session_attributes = {}
     card_title = "Welcome"
@@ -100,11 +97,34 @@ def handle_session_end_request():
 #     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
 
+def getRoom():
+    r = requests.get('http://hack-kstate-escape.herokuapp.com/player/room')
+    data = json.loads(r.text)
+
+    return data["room"]
+
+
+def switchRoom(theRoom):
+    switchRoom = {"room": theRoom}
+    r = requests.post('http://hack-kstate-escape.herokuapp.com/player/room',switchRoom)
+
+
 def backIntent(intent, session):
+
+    currentRoom = getRoom()
+
+    r = requests.get("http://hack-kstate-escape.herokuapp.com/rooms/" + currentRoom)
+    data = json.loads(r.text)
+
+    if (data["back"] != False):
+        switchRoom(data["back"])
+        speech_output = "You are currently in the " + data["back"]  + " room. "
+    else:
+        speech_output = "You are as far back as you can go. Do something else."
+
     card_title = intent['name']
     session_attributes = {}
     should_end_session = False
-    speech_output = card_title
     reprompt_text = "What would you like to do?"
     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
 
@@ -134,11 +154,7 @@ def rightIntent(intent, session):
 
 def searchIntent(intent, session):
 
-    r = requests.get('http://hack-kstate-escape.herokuapp.com/player/room')
-    data = json.loads(r.text)
-
-    currentRoom = data["room"];
-
+    currentRoom = getRoom()
 
     r = requests.get('http://hack-kstate-escape.herokuapp.com/rooms/' + currentRoom)
     data = json.loads(r.text)
