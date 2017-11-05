@@ -257,7 +257,7 @@ var rooms = {
     "keyNeeded":false,
     "back":"atrium",
     "left":false,
-    "right":radinasExit,
+    "right":"radinasExit",
     "exit":false,
     "forward":"board"
   },
