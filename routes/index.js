@@ -17,11 +17,16 @@ router.get('/', function(req, res, next) {
         <div id="cutscene" style="width: 100%; height: 100%; margin: 0; padding: 0;"><img src="" style="width: 100%; height: 100%; margin: 0px; padding: 0px;"></div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
+            var currentRoom;
             function loadThings() {
                 $.getJSON("/player/room", function(data) {
                     $("html").css("background","url(/images/" + data.room + ".jpg) no-repeat center center fixed");
-                    var audio = new Audio("/audio/" + data.room + ".wav");
-                    audio.play();
+                    if (currentRoom != data.room) {
+                        var audio = new Audio("/audio/" + data.room + ".wav");
+                        audio.play();
+                    } else {
+                        currentRoom = data.room;
+                    }
                     $.getJSON("/rooms/" + data.room, function(roomData) {
                         if (roomData.left) {
                             $("#left").show();
