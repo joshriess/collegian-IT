@@ -243,7 +243,7 @@ var rooms = {
   },
 
   "radinas":{
-    "niceName": "at rdeenas coffee shop",
+    "niceName": "the area near rdeenas coffee shop",
     "description":"The smell of the coffee is strong",
     "search":{
       "text": "You search the bar, and find a key!",
