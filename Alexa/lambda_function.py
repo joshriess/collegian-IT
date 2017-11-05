@@ -53,7 +53,7 @@ def get_welcome_response():
     session_attributes = {}
     card_title = "Welcome"
     speech_output = "Welcome to the Hack K-State Escape game. " \
-                    "You are currently in " + getFancyRoom(currentRoom) + ". "
+                    "You are currently in " + getFancyRoom(currentRoom) + ". What would you like to do?"
     #                "Please open your browser, and navigate to " \
     #                "the game URL. When you are ready, say a command."
     #speech_output = "Welcome to the Escape Hack K-State game. " \
@@ -231,7 +231,7 @@ def searchIntent(intent, session):
         if (searchObject["found"]["picture"]):
             cutsceneResponse = {"hasCutscene": "true"}
             postReq = requests.post('http://hack-kstate-escape.herokuapp.com/player/cutscene', cutsceneResponse)
-            
+
         if (searchObject["found"]["key"]):
             keyResponse = {"hasKey": "true"}
             keyReq = requests.post('http://hack-kstate-escape.herokuapp.com/player/key', keyResponse)

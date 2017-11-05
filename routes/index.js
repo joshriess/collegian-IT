@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
         <meta name="theme-color" content="#ffffff">
         <style>
             html {
-                background-size: cover;
+                background-size: cover !important;
             }
             div, h1, h2 {
                 font-family: 'Roboto', sans-serif;
