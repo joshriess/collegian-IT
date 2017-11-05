@@ -256,10 +256,10 @@ var rooms = {
     },
     "keyNeeded":false,
     "back":"atrium",
-    "left":"board",
-    "right":false,
+    "left":false,
+    "right":radinasExit,
     "exit":false,
-    "forward":"radinasExit"
+    "forward":"board"
   },
 
   "radinasExit":{
