@@ -183,7 +183,22 @@ def searchIntent(intent, session):
     postReq = requests.post('http://hack-kstate-escape.herokuapp.com/player/cutscene', cutsceneResponse)
 
     searchObject = data["search"]
-    searchText = searchObject["text"]
+
+    keyCheck = requests.get("http://hack-kstate-escape.herokuapp.com/player/key")
+    keyData = json.loads(keyCheck.text)
+
+    if (keyData["hasKey"]):
+        searchText = searchObject["hasKeyText"]
+        if (data["exit"]):
+            # YOU WIN!
+            return handle_session_end_request()
+    else:
+        searchText = searchObject["text"]
+
+    if (searchObject["found"]):
+        if (searchObject["found"]["key"]):
+            keyResponse = {"hasKey": "true"}
+            keyReq = requests.post('http://hack-kstate-escape.herokuapp.com/player/key', keyResponse)
 
     card_title = intent['name']
     session_attributes = {}

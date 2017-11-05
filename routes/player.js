@@ -3,7 +3,7 @@ var router = express.Router();
 
 var player = {
     "currentRoom": "startRoom",
-    "hasKey": "false"
+    "hasKey": false
 }
 
 var hasCutscene;
