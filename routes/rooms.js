@@ -174,7 +174,7 @@ var rooms = {
     "left":"staircase",
     "right":false,
     "exit":false,
-    "forward":"fieldlerHallway"
+    "forward":"fiedlerHallway"
   },
 
   "libraryComputerLab":{
@@ -184,7 +184,7 @@ var rooms = {
       "text": "You see a door at the end of the hall",
       "found": false
     },
-    "back":"fieldlerHallway",
+    "back":"fiedlerHallway",
     "left":"lookout",
     "right":false,
     "exit":false,
@@ -206,7 +206,7 @@ var rooms = {
   },
 
   "radinas":{
-    "niceName": "at rudeenas coffee shop",
+    "niceName": "at rdeenas coffee shop",
     "description":"The smell of the coffee is strong",
     "search":{
       "text": "You search the bar, and find a key!",
@@ -283,8 +283,8 @@ var rooms = {
     "forward":false
   },
 
-  "fieldlerHallway":{
-    "niceName": "the fieldler hallway",
+  "fiedlerHallway":{
+    "niceName": "the fiedler hallway",
     "description":"You see a set of doors that is blocked.",
     "search":{
       "text": "you see a window to the left and computer lab to the right",
@@ -304,7 +304,7 @@ var rooms = {
       "text": "You see how nice the outside world is.",
       "found": false
     },
-    "back":"fieldlerHallway",
+    "back":"fiedlerHallway",
     "left":false,
     "right":"libraryComputerLab",
     "exit":false,
