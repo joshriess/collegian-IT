@@ -214,9 +214,6 @@ def searchIntent(intent, session):
     r = requests.get('http://hack-kstate-escape.herokuapp.com/rooms/' + currentRoom)
     data = json.loads(r.text)
 
-    cutsceneResponse = {"hasCutscene": "true"}
-    postReq = requests.post('http://hack-kstate-escape.herokuapp.com/player/cutscene', cutsceneResponse)
-
     searchObject = data["search"]
 
     keyCheck = requests.get("http://hack-kstate-escape.herokuapp.com/player/key")
@@ -231,6 +228,10 @@ def searchIntent(intent, session):
         searchText = searchObject["text"]
 
     if (searchObject["found"]):
+        if (searchObject["found"]["picture"]):
+            cutsceneResponse = {"hasCutscene": "true"}
+            postReq = requests.post('http://hack-kstate-escape.herokuapp.com/player/cutscene', cutsceneResponse)
+            
         if (searchObject["found"]["key"]):
             keyResponse = {"hasKey": "true"}
             keyReq = requests.post('http://hack-kstate-escape.herokuapp.com/player/key', keyResponse)
