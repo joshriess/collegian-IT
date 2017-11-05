@@ -24,9 +24,8 @@ router.get('/', function(req, res, next) {
                     if (currentRoom != data.room) {
                         var audio = new Audio("/audio/" + data.room + ".wav");
                         audio.play();
-                    } else {
-                        currentRoom = data.room;
                     }
+                    currentRoom = data.room;
                     $.getJSON("/rooms/" + data.room, function(roomData) {
                         if (roomData.left) {
                             $("#left").show();
