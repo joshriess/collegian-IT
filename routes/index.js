@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
         <div class="options" id="back" style="display: none;"><i id="back-searched" class="fa"></i><br>Back<br>&#9660;</div>
         <div class="options" id="forward" style="display: none;">&#9650;<br>Forward<br><i id="forward-searched" class="fa"></i></div>
         <div class="options" id="search" style="display: none;"><i class="fa fa-search" aria-hidden="true"></i><br>Search/Interact</div>
-        <div id="cutscene" style="width: 100%; height: 100%; margin: 0; padding: 0;"><img src="" style="width: 100%; height: 100%; margin: 0px; padding: 0px;"></div>
+        <div id="cutscene" style="width: 100%; height: 100%; margin: 0; padding: 0; display: none;"><img src="" style="width: 100%; height: 100%; margin: 0px; padding: 0px;"></div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
             var currentRoom;
