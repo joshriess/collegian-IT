@@ -180,7 +180,7 @@ def searchIntent(intent, session):
     data = json.loads(r.text)
 
     cutsceneResponse = {"hasCutscene": "true"}
-    r = requests.post('http://hack-kstate-escape.herokuapp.com/player/cutscene', cutsceneResponse)
+    postReq = requests.post('http://hack-kstate-escape.herokuapp.com/player/cutscene', cutsceneResponse)
 
     searchObject = data["search"]
     searchText = searchObject["text"]
