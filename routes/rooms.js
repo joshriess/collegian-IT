@@ -140,13 +140,13 @@ var rooms = {
     },
     "keyNeeded":false,
     "back":"startRoom",
-    "left":"engineeringLab",
+    "left":"eeLab",
     "right":"beocat",
     "exit":false,
     "forward":"atrium"
   },
 
-  "engineeringLab":{
+  "eeLab":{
     "niceName": "the computer engineering lab",
     "description":"You see a lab full of computers",
     "search":{
