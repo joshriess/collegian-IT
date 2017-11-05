@@ -9,6 +9,14 @@ router.get('/', function(req, res, next) {
         <title>Hack K-State Escape</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+        <link rel="manifest" href="/images/manifest.json">
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/images/favicon.ico">
+        <meta name="msapplication-config" content="/images/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
         <style>
             div, h1, h2 {
                 font-family: 'Roboto', sans-serif;
