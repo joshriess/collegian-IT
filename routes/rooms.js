@@ -1,14 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-var key = false;
-var getkey;
-if(key){
-    getkey = "loungeExit";
-}
-else{
-    getkey = false;
-}
 var rooms = {
   "startRoom":{
     "niceName":"the hack k state college sleeping room.",
@@ -98,7 +90,8 @@ var rooms = {
     "niceName": "the exit near the student lounge",
     "description":"You see a staircase that leads to an exit",
     "search":{
-      "text":getkey
+      "text": "It looks like you need a key",
+      "found": false
     },
     "back":"loungeHall",
     "left":false,
