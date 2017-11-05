@@ -84,8 +84,10 @@ router.get('/', function(req, res, next) {
                             $("#intro").hide()
                         }
                         $("html").css("background","url(/images/" + data.room + ".jpg) no-repeat center center fixed");
-                        var audio = new Audio("/audio/" + data.room + ".wav");
-                        audio.play();
+                        if (currentRoom != data.room) {
+                            var audio = new Audio("/audio/" + data.room + ".wav");
+                            audio.play();
+                        }
                         $.getJSON("/rooms/" + data.room, function(roomData) {
                             if (roomData.left) {
                                 $("#left").show();
@@ -130,7 +132,6 @@ router.get('/', function(req, res, next) {
                             });
                         });
                     }
-                    currentRoom = data.room;
                 });
 
                 setTimeout(loadThings, 2500);
