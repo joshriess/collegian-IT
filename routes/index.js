@@ -22,53 +22,52 @@ router.get('/', function(req, res, next) {
             var currentRoom;
             function loadThings() {
                 $.getJSON("/player/room", function(data) {
-                    $("html").css("background","url(/images/" + data.room + ".jpg) no-repeat center center fixed");
                     if (currentRoom != data.room) {
+                        $("html").css("background","url(/images/" + data.room + ".jpg) no-repeat center center fixed");
                         var audio = new Audio("/audio/" + data.room + ".wav");
                         audio.play();
+                        $.getJSON("/rooms/" + data.room, function(roomData) {
+                            if (roomData.left) {
+                                $("#left").show();
+                            } else {
+                                $("#left").hide();
+                            }
+                            if (roomData.right) {
+                                $("#right").show();
+                            } else {
+                                $("#right").hide();
+                            }
+                            if (roomData.back) {
+                                $("#back").show();
+                            } else {
+                                $("#back").hide();
+                            }
+                            if (roomData.forward) {
+                                $("#forward").show();
+                            } else {
+                                $("#forward").hide();
+                            }
+                            if (roomData.search) {
+                                $("#search").show();
+                            } else {
+                                $("#search").hide();
+                            }
+                            $.getJSON("/player/cutscene", function(cutsceneData) {
+                                if (cutsceneData.hasCutscene == "true") {
+                                    $("#cutscene").show()
+                                    $("#cutscene img").attr("src","/images/" + roomData.search.found.picture);
+                                    $.post("/player/cutscene", {"hasCutscene": "false"});
+                                    setTimeout(function() {
+                                        $("#cutscene").hide();
+                                        $("#cutscene img").attr("src","");
+                                    }, 5000);
+                                } else {
+                                    $("#cutscene").hide()
+                                }
+                            });
+                        });
                     }
                     currentRoom = data.room;
-                    $.getJSON("/rooms/" + data.room, function(roomData) {
-                        if (roomData.left) {
-                            $("#left").show();
-                        } else {
-                            $("#left").hide();
-                        }
-                        if (roomData.right) {
-                            $("#right").show();
-                        } else {
-                            $("#right").hide();
-                        }
-                        if (roomData.back) {
-                            $("#back").show();
-                        } else {
-                            $("#back").hide();
-                        }
-                        if (roomData.forward) {
-                            $("#forward").show();
-                        } else {
-                            $("#forward").hide();
-                        }
-                        if (roomData.search) {
-                            $("#search").show();
-                        } else {
-                            $("#search").hide();
-                        }
-                        $.getJSON("/player/cutscene", function(cutsceneData) {
-                            if (cutsceneData.hasCutscene == "true") {
-                                $("#cutscene").show()
-                                $("#cutscene img").attr("src","/images/" + roomData.search.found.picture);
-                                $.post("/player/cutscene", {"hasCutscene": "false"});
-                                setTimeout(function() {
-                                    $("#cutscene").hide();
-                                    $("#cutscene img").attr("src","");
-                                }, 5000);
-                            } else {
-                                $("#cutscene").hide()
-                            }
-                        });
-
-                    });
                 });
 
                 setTimeout(loadThings, 2500);
