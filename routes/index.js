@@ -13,13 +13,15 @@ router.get('/', function(req, res, next) {
         <div class="options" id="right" style="display: none;">&#9654;<br>Right</div>
         <div class="options" id="back" style="display: none;">Back<br>&#9660;</div>
         <div class="options" id="forward" style="display: none;">&#9650;<br>Forward</div>
-        <div class="options" id="search" style="display: none;">&#128269;<br>Search</div>
+        <div class="options" id="search" style="display: none;">&#128269;<br>Search/Interact</div>
         <div id="cutscene" style="width: 100%; height: 100%; margin: 0; padding: 0;"><img src="" style="width: 100%; height: 100%; margin: 0px; padding: 0px;"></div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
             function loadThings() {
                 $.getJSON("/player/room", function(data) {
                     $("html").css("background","url(/images/" + data.room + ".jpg) no-repeat center center fixed");
+                    var audio = new Audio("/audio/" + data.room + ".wav");
+                    audio.play();
                     $.getJSON("/rooms/" + data.room, function(roomData) {
                         if (roomData.left) {
                             $("#left").show();
