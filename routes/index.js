@@ -46,20 +46,20 @@ router.get('/', function(req, res, next) {
                         } else {
                             $("#search").hide();
                         }
+                        $.getJSON("/player/cutscene", function(cutsceneData) {
+                            if (cutsceneData.hasCutscene) {
+                                $("#cutscene").show()
+                                $("#cutscene img").attr("src","/images/" + roomData.search.found.picture);
+                                $.post("/player/cutscene", {"hasCutscene": false});
+                                setTimeout(function() {
+                                    $("#cutscene").hide()
+                                }, 5000);
+                            } else {
+                                $("#cutscene").hide()
+                            }
+                        });
 
                     });
-                });
-                $.getJSON("/player/cutscene", function(data) {
-                    if (data.hasCutscene) {
-                        $("#cutscene").show()
-                        $("#cutscene img").attr("src","/images/" + roomData.search.found.picture);
-                        $.post("/player/cutscene", {"hasCutscene": false});
-                        setTimeout(function() {
-                            $("#cutscene").hide()
-                        }, 5000);
-                    } else {
-                        $("#cutscene").hide()
-                    }
                 });
 
                 setTimeout(loadThings, 2500);
