@@ -53,7 +53,7 @@ def get_welcome_response():
     session_attributes = {}
     card_title = "Welcome"
     speech_output = "Welcome to the Hack K-State Escape game. " \
-                    "You are currently in the " + currentRoom + " room. "
+                    "You are currently in " + getFancyRoom(currentRoom) + ". "
     #                "Please open your browser, and navigate to " \
     #                "the game URL. When you are ready, say a command."
     #speech_output = "Welcome to the Escape Hack K-State game. " \
@@ -81,27 +81,17 @@ def handle_session_end_request():
         card_title, speech_output, None, should_end_session))
 
 
-# def doIntent(intent, session):
-#     """ Creates the request for the current option. """
-#
-#     card_title = intent['name']
-#     session_attributes = {}
-#     should_end_session = False
-#
-#     #speech_output = card_title
-#     #speech_output = intent['slots']['LIST_OF_OPTIONS']['value']
-#     speech_output = intent['slots']['Options']['LIST_OF_OPTIONS']['value']
-#     #speech_output = "Here is the response for that action. What would you like to do next?"
-#     reprompt_text = "What would you like to do next?"
-#
-#     return build_response(session_attributes, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
-
-
 def getRoom():
     r = requests.get('http://hack-kstate-escape.herokuapp.com/player/room')
     data = json.loads(r.text)
 
     return data["room"]
+
+def getFancyRoom(room):
+    r = requests.get('http://hack-kstate-escape.herokuapp.com/rooms/' + room)
+    data = json.loads(r.text)
+
+    return data["niceName"]
 
 
 def switchRoom(theRoom):
@@ -121,7 +111,7 @@ def backIntent(intent, session):
 
     if (data["back"] != False):
         switchRoom(data["back"])
-        speech_output = "You are currently in the " + data["back"]  + " room. "
+        speech_output = "You are currently in " + getFancyRoom(data["back"])  + ". "
     else:
         speech_output = "You are as far back as you can go. Do something else."
 
@@ -138,7 +128,7 @@ def forwardIntent(intent, session):
 
     if (data["forward"] != False):
         switchRoom(data["forward"])
-        speech_output = "You are currently in the " + data["forward"]  + " room. "
+        speech_output = "You are currently in " + getFancyRoom(data["forward"])  + ". "
     else:
         speech_output = "You cannot go forward. Do something else."
 
@@ -155,7 +145,7 @@ def leftIntent(intent, session):
 
     if (data["left"] != False):
         switchRoom(data["left"])
-        speech_output = "You are currently in the " + data["left"]  + " room. "
+        speech_output = "You are currently in " + getFancyRoom(data["left"])  + ". "
     else:
         speech_output = "You are as far left as you can go. Do something else."
 
@@ -172,7 +162,7 @@ def rightIntent(intent, session):
 
     if (data["right"] != False):
         switchRoom(data["right"])
-        speech_output = "You are currently in the " + data["right"]  + " room. "
+        speech_output = "You are currently in " + getFancyRoom(data["right"])  + ". "
     else:
         speech_output = "You are as far right as you can go. Do something else."
 
