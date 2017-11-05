@@ -50,7 +50,7 @@ router.get('/', function(req, res, next) {
                             if (cutsceneData.hasCutscene) {
                                 $("#cutscene").show()
                                 $("#cutscene img").attr("src","/images/" + roomData.search.found.picture);
-                                $.post("/player/cutscene", {"hasCutscene": false});
+                                $.post("/player/cutscene", {"hasCutscene": 0});
                                 setTimeout(function() {
                                     $("#cutscene").hide()
                                 }, 5000);
