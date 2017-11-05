@@ -126,8 +126,6 @@ router.get('/', function(req, res, next) {
                                         $("#cutscene").hide();
                                         $("#cutscene img").attr("src","");
                                     }, 8000);
-                                } else {
-                                    $("#cutscene").hide()
                                 }
                             });
                         });
