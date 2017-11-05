@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   var page = `
   <html style="background-size: cover;">
     <head>
-        <title>Escape Hack K-State</title>
+        <title>Hack K-State Escape</title>
     </head>
     <body style='width: 100%; height: 100%; padding: 0; margin: 0;'>
         <div class="options" id="left" style="display: none;">&#9664;<br>Left</div>
