@@ -206,7 +206,7 @@ var rooms = {
   },
 
   "radinas":{
-    "niceName": "at rahdeenas coffee shop",
+    "niceName": "at rudeenas coffee shop",
     "description":"The smell of the coffee is strong",
     "search":{
       "text": "You search the bar, and find a key!",
@@ -220,7 +220,7 @@ var rooms = {
     "left":"board",
     "right":false,
     "exit":false,
-    "forward":false
+    "forward":"radinasExit"
   },
 
   "radinasExit":{
