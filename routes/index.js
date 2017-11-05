@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
         <div class="options" id="back" style="display: none;">Back<br>&#9660;</div>
         <div class="options" id="forward" style="display: none;">&#9650;<br>Forward</div>
         <div class="options" id="search" style="display: none;">&#128269;<br>Search</div>
+        <div id="cutscene"><img src=""></div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
             function loadThings() {
@@ -45,7 +46,20 @@ router.get('/', function(req, res, next) {
                         } else {
                             $("#search").hide();
                         }
+
                     });
+                });
+                $.getJSON("/player/cutscene", function(data) {
+                    if (data.hasCutscene) {
+                        $("#cutscene").show()
+                        $("#cutscene img").attr("src","/images/" + roomData.search.found.picture);
+                        $.post("/player/cutscene", {"hasCutscene": false});
+                        setTimeout(function() {
+                            $("#cutscene").hide()
+                        }, 5000);
+                    } else {
+                        $("#cutscene").hide()
+                    }
                 });
 
                 setTimeout(loadThings, 2500);

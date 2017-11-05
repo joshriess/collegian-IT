@@ -6,6 +6,8 @@ var player = {
     "health": 4
 }
 
+var hasCutscene;
+
 router.get('/', function(req, res, next) {
   res.send(player);
 });
@@ -33,5 +35,16 @@ router.post('/room',function(req, res, next){
     player.currentRoom = req.body.room;
     res.send(player.currentRoom);
 });
+
+router.get('/cutscene', function(req, res, next) {
+    var response = {"hasCutscene": hasCutscene};
+    res.send(response);
+});
+
+router.post('/cutscene',function(req, res, next){
+    hasCutscene = req.body.hasCutscene;
+    res.send(hasCutscene);
+});
+
 
 module.exports = router;
