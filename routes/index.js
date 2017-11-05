@@ -7,13 +7,15 @@ router.get('/', function(req, res, next) {
   <html style="background-size: cover;">
     <head>
         <title>Hack K-State Escape</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body style='width: 100%; height: 100%; padding: 0; margin: 0;'>
         <div class="options" id="left" style="display: none;">&#9664;<br>Left</div>
         <div class="options" id="right" style="display: none;">&#9654;<br>Right</div>
         <div class="options" id="back" style="display: none;">Back<br>&#9660;</div>
         <div class="options" id="forward" style="display: none;">&#9650;<br>Forward</div>
-        <div class="options" id="search" style="display: none;">&#128269;<br>Search/Interact</div>
+        <div class="options" id="search" style="display: none;"><i class="fa fa-search" aria-hidden="true"></i><br>Search/Interact</div>
         <div id="cutscene" style="width: 100%; height: 100%; margin: 0; padding: 0;"><img src="" style="width: 100%; height: 100%; margin: 0px; padding: 0px;"></div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
@@ -74,6 +76,9 @@ router.get('/', function(req, res, next) {
             loadThings();
         </script>
         <style>
+            div {
+                font-family: 'Roboto', sans-serif;
+            }
             .options {
                 font-size: 32px;
                 color: white;
