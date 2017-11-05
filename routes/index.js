@@ -109,12 +109,14 @@ router.get('/', function(req, res, next) {
                             }
                             if (roomData.search) {
                                 $("#search").show();
+                                if (roomData.search.found.picture) {
+                                    globalHasCutscene = true;
+                                }
                             } else {
                                 $("#search").hide();
                             }
                             $.getJSON("/player/cutscene", function(cutsceneData) {
                                 if (cutsceneData.hasCutscene == "true") {
-                                    globalHasCutscene = true;
                                     $("#cutscene").show()
                                     $("#cutscene img").attr("src","/images/" + roomData.search.found.picture);
                                     $.post("/player/cutscene", {"hasCutscene": "false"});
@@ -124,7 +126,6 @@ router.get('/', function(req, res, next) {
                                     }, 5000);
                                 } else {
                                     $("#cutscene").hide()
-                                    globalHasCutscene = false;
                                 }
                             });
                         });
