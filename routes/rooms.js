@@ -35,7 +35,7 @@ var rooms = {
   },
 
   "beoTwo":{
-    "niceName": "the deveopers easter egg room",
+    "niceName": "the developer's easter egg room",
     "description":"You see a set of doors that is blocked.",
     "search":{
       "text": "You need a key in order to unlock this room.",
