@@ -28,13 +28,13 @@ var rooms = {
     },
     "keyNeeded":false,
     "back":"startRoom",
-    "left":"computerScienceHallway",
+    "left":"beoTwo",
     "right":"gameLab",
     "exit":false,
     "forward":"loungeHall"
   },
 
-  "beocatInner":{
+  "beoTwo":{
     "niceName": "the deveopers easter egg room",
     "description":"You see a set of doors that is blocked.",
     "search":{
