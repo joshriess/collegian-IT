@@ -52,7 +52,8 @@ router.get('/', function(req, res, next) {
                                 $("#cutscene img").attr("src","/images/" + roomData.search.found.picture);
                                 $.post("/player/cutscene", {"hasCutscene": "false"});
                                 setTimeout(function() {
-                                    $("#cutscene").hide()
+                                    $("#cutscene").hide();
+                                    $("#cutscene img").attr("src","");
                                 }, 5000);
                             } else {
                                 $("#cutscene").hide()
