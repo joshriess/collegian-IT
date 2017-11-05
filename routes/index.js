@@ -125,7 +125,7 @@ router.get('/', function(req, res, next) {
                                     setTimeout(function() {
                                         $("#cutscene").hide();
                                         $("#cutscene img").attr("src","");
-                                    }, 5000);
+                                    }, 8000);
                                 } else {
                                     $("#cutscene").hide()
                                 }
@@ -135,7 +135,7 @@ router.get('/', function(req, res, next) {
                     currentRoom = data.room;
                 });
 
-                setTimeout(loadThings, 2500);
+                setTimeout(loadThings, 1000);
             }
             loadThings();
         </script>
