@@ -80,6 +80,14 @@ def handle_session_end_request():
     return build_response({}, build_speechlet_response(
         card_title, speech_output, None, should_end_session))
 
+def handle_session_WIN():
+    card_title = "You win!"
+    speech_output = "Congratulations, you escaped Hack K-State! Thank you for playing our game. Try playing again and finding the easter eggs. "
+    # Setting this to true ends the session and exits the skill.
+    should_end_session = True
+    return build_response({}, build_speechlet_response(
+        card_title, speech_output, None, should_end_session))
+
 
 def getRoom():
     r = requests.get('http://hack-kstate-escape.herokuapp.com/player/room')
@@ -102,6 +110,33 @@ def switchRoom(theRoom):
 def getRoomInfo(theRoom):
     r = requests.get("http://hack-kstate-escape.herokuapp.com/rooms/" + theRoom)
     return json.loads(r.text)
+
+
+def resetIntent(intent, session):
+    r = requests.get("http://hack-kstate-escape.herokuapp.com/player/reset")
+
+    currentRoom = getRoom()
+
+    session_attributes = {}
+    card_title = "Welcome"
+    speech_output = "Resetting game. Welcome to the Hack K-State Escape game. " \
+                    "You are currently in " + getFancyRoom(currentRoom) + ". "
+    #                "Please open your browser, and navigate to " \
+    #                "the game URL. When you are ready, say a command."
+    #speech_output = "Welcome to the Escape Hack K-State game. " \
+    #                "You wake up in a dark empty room, there's a door on the left and a door on the right. " \
+    #                "You feel an eerie and uneasy feeling in your gut, where did everyone go?"
+    # If the user either does not reply to the welcome message or says something
+    # that is not understood, they will be prompted again with this text.
+
+
+
+    reprompt_text = "When you are ready, please say " \
+                    "a command."
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
 
 
 def backIntent(intent, session):
@@ -191,7 +226,7 @@ def searchIntent(intent, session):
         searchText = searchObject["hasKeyText"]
         if (data["exit"]):
             # YOU WIN!
-            return handle_session_end_request()
+            return handle_session_WIN()
     else:
         searchText = searchObject["text"]
 
@@ -254,6 +289,8 @@ def on_intent(intent_request, session):
         return leftIntent(intent, session)
     elif intent_name == "rightIntent":
         return rightIntent(intent, session)
+    elif intent_name == "resetIntent":
+        return resetIntent(intent, session)
     elif intent_name == "searchIntent":
         return searchIntent(intent, session)
     elif intent_name == "AMAZON.HelpIntent":

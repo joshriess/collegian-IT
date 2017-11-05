@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-var player = {
+var newPlayer = {
     "currentRoom": "startRoom",
     "hasKey": false
 }
+
+var player = newPlayer;
 
 var hasCutscene;
 
@@ -41,6 +43,11 @@ router.post('/key',function(req, res, next){
     player.hasKey = req.body.hasKey;
     var response = {"hasKey": player.hasKey};
     res.send(response);
+});
+
+router.get('/reset', function(req, res, next) {
+    player = newPlayer;
+    res.send("true");
 });
 
 module.exports = router;
