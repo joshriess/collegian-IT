@@ -28,22 +28,22 @@ var rooms = {
     },
     "keyNeeded":false,
     "back":"startRoom",
-    "left":"computerScienceHallway",
+    "left":"beoTwo",
     "right":"gameLab",
     "exit":false,
     "forward":"loungeHall"
   },
 
-  "beocatInner":{
+  "beoTwo":{
     "niceName": "the deveopers easter egg room",
     "description":"You see a set of doors that is blocked.",
     "search":{
-      "text": "You find the remains of a lan party",
+      "text": "You need a key in order to unlock this room.",
       "hasKeyText": "Look at the nerds that made this game.",
       "found": false
     },
     "keyNeeded":true,
-    "back":"durlandAuditorium",
+    "back":"beocat",
     "left":false,
     "right":false,
     "exit":false,
