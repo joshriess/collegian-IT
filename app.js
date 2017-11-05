@@ -10,6 +10,7 @@ var rooms = require('./routes/rooms');
 var items = require('./routes/items');
 var player = require('./routes/player');
 var images = require('./routes/imageServer');
+var audio = require('./routes/audioServer');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/rooms', rooms);
 app.use('/items', items);
 app.use('/player', player);
 app.use('/images', images);
+app.use('/audio', audio);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
