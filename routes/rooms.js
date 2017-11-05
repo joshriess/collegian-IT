@@ -19,7 +19,7 @@ var rooms = {
   },
 
   "beocat":{
-    "niceName":"the beocat hallway",
+    "niceName":"the baocat hallway",
     "description":"You see a hallway full of doors.",
     "search":{
       "text": "You see a supercomputer",
