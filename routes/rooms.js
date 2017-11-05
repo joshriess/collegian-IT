@@ -32,10 +32,10 @@ var rooms = {
       "found": false
     },
     "back":"startRoom",
-    "left":false,
-    "right":"computerScienceHallway",
+    "left":"computerScienceHallway",
+    "right":"gameLab",
     "exit":false,
-    "forward":false
+    "forward":"loungeHall"
   },
 
   "gameLab":{
@@ -60,10 +60,10 @@ var rooms = {
       "found": false
     },
     "back":"beocat",
-    "left":false,
-    "right":false,
+    "left":"studentLounge",
+    "right":"linuxLab",
     "exit":false,
-
+    "forward":"loungeExit"
   },
 
   "studentLounge":{
@@ -174,7 +174,7 @@ var rooms = {
     "left":"staircase",
     "right":false,
     "exit":false,
-    "forward":"libraryComputerLab"
+    "forward":"fieldlerHallway"
   },
 
   "libraryComputerLab":{
@@ -184,8 +184,8 @@ var rooms = {
       "text": "You see a door at the end of the hall",
       "found": false
     },
-    "back":"library",
-    "left":false,
+    "back":"fieldlerHallway",
+    "left":"lookout",
     "right":false,
     "exit":false,
     "forward":"libraryExit"
@@ -279,6 +279,34 @@ var rooms = {
     "back":"durlandAuditorium",
     "left":false,
     "right":false,
+    "exit":false,
+    "forward":false
+  },
+
+  "fieldlerHallway":{
+    "niceName": "the fieldler hallway",
+    "description":"You see a set of doors that is blocked.",
+    "search":{
+      "text": "you see a window to the left and computer lab to the right",
+      "found": false
+    },
+    "back":"library",
+    "left":"lookout",
+    "right":"libraryComputerLab",
+    "exit":false,
+    "forward":false
+  },
+
+  "lookout":{
+    "niceName": "looking out at Phase 4",
+    "description":"You see a set of doors that is blocked.",
+    "search":{
+      "text": "You see how nice the outside world is.",
+      "found": false
+    },
+    "back":"fieldlerHallway",
+    "left":false,
+    "right":"libraryComputerLab",
     "exit":false,
     "forward":false
   },
