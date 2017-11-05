@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var page = `
-  <html style="background-size: cover; background: url(/images/startRoom.jpg) no-repeat center center fixed;">
+  <html style="background: url(/images/startRoom.jpg) no-repeat center center fixed;">
     <head>
         <title>Hack K-State Escape</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,6 +18,9 @@ router.get('/', function(req, res, next) {
         <meta name="msapplication-config" content="/images/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
         <style>
+            html {
+                background-size: cover;
+            }
             div, h1, h2 {
                 font-family: 'Roboto', sans-serif;
             }
