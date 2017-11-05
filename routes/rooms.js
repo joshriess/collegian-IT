@@ -27,7 +27,7 @@ var rooms = {
       "found": false
     },
     "keyNeeded":false,
-    "back":"startRoom",
+    "back":"computerScienceHallway",
     "left":"beoTwo",
     "right":"gameLab",
     "exit":false,
