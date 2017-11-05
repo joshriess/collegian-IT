@@ -132,6 +132,7 @@ router.get('/', function(req, res, next) {
                             });
                         });
                     }
+                    currentRoom = data.room;
                 });
 
                 setTimeout(loadThings, 2500);
