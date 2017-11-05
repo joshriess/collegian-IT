@@ -9,6 +9,7 @@ var rooms = {
       "text": "It seems that people were here, but left in a hurry",
       "found": false
     },
+    "keyNeeded":false,
     "back":false,
     "left":"computerScienceHallway",
     "right":"beocat",
@@ -23,11 +24,27 @@ var rooms = {
       "text": "You see a supercomputer",
       "found": false
     },
+    "keyNeeded":false,
     "back":"startRoom",
     "left":"computerScienceHallway",
     "right":"gameLab",
     "exit":false,
     "forward":"loungeHall"
+  },
+
+  "beocatInner":{
+    "niceName": "the deveopers easter egg room",
+    "description":"You see a set of doors that is blocked.",
+    "search":{
+      "text": "You find the remains of a lan party",
+      "found": false
+    },
+    "keyNeeded":true,
+    "back":"durlandAuditorium",
+    "left":false,
+    "right":false,
+    "exit":false,
+    "forward":false
   },
 
   "gameLab":{
@@ -37,6 +54,7 @@ var rooms = {
       "text": "You find the remains of a lan party",
       "found": false
     },
+    "keyNeeded":false,
     "back":"beocat",
     "left":false,
     "right":false,
@@ -51,6 +69,7 @@ var rooms = {
       "text": "You see what looks like an exit staircase.",
       "found": false
     },
+    "keyNeeded":false,
     "back":"beocat",
     "left":"studentLounge",
     "right":"linuxLab",
@@ -65,6 +84,7 @@ var rooms = {
       "text": "You hear the sound of typing from somewhere in the room.",
       "found": false
     },
+    "keyNeeded":false,
     "back":"loungeHall",
     "left":false,
     "right":false,
@@ -79,6 +99,7 @@ var rooms = {
       "text": "You find a missing HDMI cable.",
       "found": false
     },
+    "keyNeeded":false,
     "back":"loungeHall",
     "left":false,
     "right":false,
@@ -93,6 +114,7 @@ var rooms = {
       "text": "It looks like you need a key",
       "found": false
     },
+    "keyNeeded":true,
     "back":"loungeHall",
     "left":false,
     "right":false,
@@ -107,6 +129,7 @@ var rooms = {
       "text": "You find a fire extenguisher.",
       "found": false
     },
+    "keyNeeded":false,
     "back":"startRoom",
     "left":"engineeringLab",
     "right":"beocat",
@@ -121,6 +144,7 @@ var rooms = {
       "text": "You find a crying engineer.  You aren't sure if it is because everyone is missing, or they are an engineer.",
       "found": false
     },
+    "keyNeeded":false,
     "back":"computerScienceHallway",
     "left":false,
     "right":false,
@@ -135,6 +159,7 @@ var rooms = {
       "text": "You find tables and chairs, nothing useful.",
       "found": false
     },
+    "keyNeeded":false,
     "back":"computerScienceHallway",
     "left":"staircase",//Change for late game
     "right":false,
@@ -149,6 +174,7 @@ var rooms = {
       "text": "I wonder what is downstairs",
       "found": false
     },
+    "keyNeeded":false,
     "back":"atrium",
     "left":false,
     "right":false,
@@ -163,11 +189,12 @@ var rooms = {
       "text": "You smell the remains of sleepless nights and broken dreams.",
       "found": false
     },
+    "keyNeeded":false,
     "back":"durlandAuditorium",
     "left":"staircase",
     "right":false,
     "exit":false,
-    "forward":"fieldlerHallway"
+    "forward":"fiedlerHallway"
   },
 
   "libraryComputerLab":{
@@ -177,7 +204,8 @@ var rooms = {
       "text": "You see a door at the end of the hall",
       "found": false
     },
-    "back":"fieldlerHallway",
+    "keyNeeded":false,
+    "back":"fiedlerHallway",
     "left":"lookout",
     "right":false,
     "exit":false,
@@ -191,6 +219,7 @@ var rooms = {
       "text": "Congratulations, you WIN!",
       "found": false
     },
+    "keyNeeded":true,
     "back":"libraryComputerLab",
     "left":false,
     "right":false,
@@ -199,7 +228,7 @@ var rooms = {
   },
 
   "radinas":{
-    "niceName": "at rahdeenas coffee shop",
+    "niceName": "at rdeenas coffee shop",
     "description":"The smell of the coffee is strong",
     "search":{
       "text": "You search the bar, and find a key!",
@@ -209,11 +238,12 @@ var rooms = {
         "picture": "RFIDkey.jpg"
       },
     },
+    "keyNeeded":false,
     "back":"atrium",
     "left":"board",
     "right":false,
     "exit":false,
-    "forward":false
+    "forward":"radinasExit"
   },
 
   "radinasExit":{
@@ -223,10 +253,11 @@ var rooms = {
       "text": "You find an exit that seems to be welded shut.",
       "found": false
     },
+    "keyNeeded":true,
     "back":"radinas",
     "left":false,
     "right":false,
-    "exit":false,
+    "exit":true,
     "forward":false
   },
 
@@ -241,6 +272,7 @@ var rooms = {
        "picture": "map.jpg"
       },
     },
+    "keyNeeded":false,
     "back":"radinas",
     "left":false,
     "right":false,
@@ -255,6 +287,7 @@ var rooms = {
       "text": "You see a picture of a man that seems important.",
       "found": false
     },
+    "keyNeeded":false,
     "back":"board",
     "left":"library",//will change with updates
     "right":false,
@@ -269,20 +302,22 @@ var rooms = {
       "text": "You find the remains of a lan party",
       "found": false
     },
+    "keyNeeded":true,
     "back":"durlandAuditorium",
     "left":false,
     "right":false,
-    "exit":false,
+    "exit":true,
     "forward":false
   },
 
-  "fieldlerHallway":{
-    "niceName": "the fieldler hallway",
+  "fiedlerHallway":{
+    "niceName": "the fiedler hallway",
     "description":"You see a set of doors that is blocked.",
     "search":{
       "text": "you see a window to the left and computer lab to the right",
       "found": false
     },
+    "keyNeeded":false,
     "back":"library",
     "left":"lookout",
     "right":"libraryComputerLab",
@@ -297,7 +332,8 @@ var rooms = {
       "text": "You see how nice the outside world is.",
       "found": false
     },
-    "back":"fieldlerHallway",
+    "keyNeeded":false,
+    "back":"fiedlerHallway",
     "left":false,
     "right":"libraryComputerLab",
     "exit":false,
