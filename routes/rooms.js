@@ -279,7 +279,7 @@ var rooms = {
   },
 
   "board":{
-    "niceName": "the spiral staircase",
+    "niceName": "the room near the spiral staircase",
     "description":"You see a digital board.",
     "search":{
       "text": "You find a map on the board!",

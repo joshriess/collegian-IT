@@ -74,9 +74,10 @@ router.get('/', function(req, res, next) {
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
             var currentRoom;
+            var globalHasCutscene = false;
             function loadThings() {
                 $.getJSON("/player/room", function(data) {
-                    if (currentRoom != data.room) {
+                    if (currentRoom != data.room || globalHasCutscene) {
                         if (data.room == "startRoom") {
                             $("#intro").show()
                         } else {
@@ -113,6 +114,7 @@ router.get('/', function(req, res, next) {
                             }
                             $.getJSON("/player/cutscene", function(cutsceneData) {
                                 if (cutsceneData.hasCutscene == "true") {
+                                    globalHasCutscene = true;
                                     $("#cutscene").show()
                                     $("#cutscene img").attr("src","/images/" + roomData.search.found.picture);
                                     $.post("/player/cutscene", {"hasCutscene": "false"});
@@ -122,6 +124,7 @@ router.get('/', function(req, res, next) {
                                     }, 5000);
                                 } else {
                                     $("#cutscene").hide()
+                                    globalHasCutscene = false;
                                 }
                             });
                         });
