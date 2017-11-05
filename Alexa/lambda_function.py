@@ -179,6 +179,9 @@ def searchIntent(intent, session):
     r = requests.get('http://hack-kstate-escape.herokuapp.com/rooms/' + currentRoom)
     data = json.loads(r.text)
 
+    cutsceneResponse = {"hasCutscene": "true"}
+    r = requests.post('http://hack-kstate-escape.herokuapp.com/player/cutscene', cutsceneResponse)
+
     searchObject = data["search"]
     searchText = searchObject["text"]
 
